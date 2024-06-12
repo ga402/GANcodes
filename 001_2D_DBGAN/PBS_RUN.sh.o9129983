@@ -1,0 +1,104 @@
+Random Seed:  999
+testing models
+Succes test for 3x128x128 data
+ -------- netG ----------
+Generator(
+  (main): Sequential(
+    (0): Sequential(
+      (0): ConvTranspose2d(100, 2048, kernel_size=(4, 4), stride=(2, 2), bias=False)
+      (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Sequential(
+      (0): ConvTranspose2d(2048, 1024, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): Sequential(
+      (0): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (4): Sequential(
+      (0): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (5): ConvTranspose2d(128, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (6): Tanh()
+  )
+)
+ -------- netD ----------
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (1): LeakyReLU(negative_slope=0.2)
+    (2): Sequential(
+      (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (4): Sequential(
+      (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (5): Sequential(
+      (0): Conv2d(512, 1024, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (6): Conv2d(1024, 1, kernel_size=(4, 4), stride=(2, 2))
+    (7): Sigmoid()
+  )
+)
+Epoch [1/200], Step [10/45], disc_loss: 1.0045, gen_loss: 0.9292, D(x): 0.80, D (G(z)): 0.70
+Epoch [1/200], Step [20/45], disc_loss: 0.8375, gen_loss: 0.9759, D(x): 0.75, D (G(z)): 0.62
+Epoch [1/200], Step [30/45], disc_loss: 0.5736, gen_loss: 1.5279, D(x): 0.83, D (G(z)): 0.50
+Epoch [1/200], Step [40/45], disc_loss: 0.4328, gen_loss: 1.9401, D(x): 0.86, D (G(z)): 0.43
+Epoch [2/200], Step [10/45], disc_loss: 0.3101, gen_loss: 2.5817, D(x): 0.91, D (G(z)): 0.33
+Epoch [2/200], Step [20/45], disc_loss: 0.2077, gen_loss: 2.6850, D(x): 0.95, D (G(z)): 0.26
+Epoch [2/200], Step [30/45], disc_loss: 0.2026, gen_loss: 3.0404, D(x): 0.96, D (G(z)): 0.26
+Epoch [2/200], Step [40/45], disc_loss: 0.1292, gen_loss: 3.2894, D(x): 0.96, D (G(z)): 0.17
+Epoch [3/200], Step [10/45], disc_loss: 0.1714, gen_loss: 3.8022, D(x): 0.94, D (G(z)): 0.21
+Epoch [3/200], Step [20/45], disc_loss: 0.1285, gen_loss: 3.7484, D(x): 0.96, D (G(z)): 0.18
+Epoch [3/200], Step [30/45], disc_loss: 0.0841, gen_loss: 4.2691, D(x): 0.98, D (G(z)): 0.13
+Epoch [3/200], Step [40/45], disc_loss: 0.1066, gen_loss: 4.1664, D(x): 0.96, D (G(z)): 0.14
+Epoch [4/200], Step [10/45], disc_loss: 0.0703, gen_loss: 4.4103, D(x): 0.98, D (G(z)): 0.11
+Epoch [4/200], Step [20/45], disc_loss: 0.0842, gen_loss: 4.2698, D(x): 0.98, D (G(z)): 0.12
+Epoch [4/200], Step [30/45], disc_loss: 0.0667, gen_loss: 4.8079, D(x): 0.97, D (G(z)): 0.09
+Epoch [4/200], Step [40/45], disc_loss: 0.0565, gen_loss: 4.8326, D(x): 0.99, D (G(z)): 0.09
+Epoch [5/200], Step [10/45], disc_loss: 0.0627, gen_loss: 4.5029, D(x): 0.96, D (G(z)): 0.08
+Epoch [5/200], Step [20/45], disc_loss: 0.0455, gen_loss: 4.7801, D(x): 0.97, D (G(z)): 0.05
+Epoch [5/200], Step [30/45], disc_loss: 0.0729, gen_loss: 4.8938, D(x): 0.94, D (G(z)): 0.07
+Epoch [5/200], Step [40/45], disc_loss: 0.0709, gen_loss: 4.8392, D(x): 0.96, D (G(z)): 0.09
+Epoch [6/200], Step [10/45], disc_loss: 0.0453, gen_loss: 5.1993, D(x): 0.99, D (G(z)): 0.08
+Epoch [6/200], Step [20/45], disc_loss: 0.0367, gen_loss: 4.9330, D(x): 1.00, D (G(z)): 0.07
+Epoch [6/200], Step [30/45], disc_loss: 0.0382, gen_loss: 5.2185, D(x): 0.99, D (G(z)): 0.07
+Epoch [6/200], Step [40/45], disc_loss: 0.0241, gen_loss: 5.1658, D(x): 1.00, D (G(z)): 0.04
+Epoch [7/200], Step [10/45], disc_loss: 0.0245, gen_loss: 5.0896, D(x): 0.99, D (G(z)): 0.04
+Epoch [7/200], Step [20/45], disc_loss: 0.0376, gen_loss: 5.1547, D(x): 0.98, D (G(z)): 0.05
+Epoch [7/200], Step [30/45], disc_loss: 0.0275, gen_loss: 5.3966, D(x): 1.00, D (G(z)): 0.05
+Epoch [7/200], Step [40/45], disc_loss: 0.0326, gen_loss: 5.2306, D(x): 0.98, D (G(z)): 0.04
+Epoch [8/200], Step [10/45], disc_loss: 0.0231, gen_loss: 5.1127, D(x): 0.99, D (G(z)): 0.03
+Epoch [8/200], Step [20/45], disc_loss: 0.0114, gen_loss: 5.5543, D(x): 1.00, D (G(z)): 0.02
+Epoch [8/200], Step [30/45], disc_loss: 0.0402, gen_loss: 4.9433, D(x): 0.97, D (G(z)): 0.03
+Epoch [8/200], Step [40/45], disc_loss: 0.0225, gen_loss: 5.3555, D(x): 0.99, D (G(z)): 0.03
+Epoch [9/200], Step [10/45], disc_loss: 0.0197, gen_loss: 5.2868, D(x): 1.00, D (G(z)): 0.04
+Epoch [9/200], Step [20/45], disc_loss: 0.0175, gen_loss: 5.3872, D(x): 0.99, D (G(z)): 0.02
+Epoch [9/200], Step [30/45], disc_loss: 0.0197, gen_loss: 5.4725, D(x): 0.99, D (G(z)): 0.03
+Epoch [9/200], Step [40/45], disc_loss: 0.0159, gen_loss: 5.5874, D(x): 1.00, D (G(z)): 0.03
+Epoch [10/200], Step [10/45], disc_loss: 0.0292, gen_loss: 5.1571, D(x): 0.98, D (G(z)): 0.03
+Epoch [10/200], Step [20/45], disc_loss: 0.0090, gen_loss: 6.0566, D(x): 1.00, D (G(z)): 0.02
+Epoch [10/200], Step [30/45], disc_loss: 0.0138, gen_loss: 5.7082, D(x): 0.99, D (G(z)): 0.02
+Epoch [10/200], Step [40/45], disc_loss: 0.0270, gen_loss: 5.1581, D(x): 0.99, D (G(z)): 0.04

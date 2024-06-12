@@ -1,0 +1,70 @@
+Random Seed:  999
+testing models
+Succes test for 3x128x128 data
+netG
+Generator(
+  (main): Sequential(
+    (0): Sequential(
+      (0): ConvTranspose2d(100, 2048, kernel_size=(4, 4), stride=(2, 2), bias=False)
+      (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Sequential(
+      (0): ConvTranspose2d(2048, 1024, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): Sequential(
+      (0): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (4): Sequential(
+      (0): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (5): ConvTranspose2d(128, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (6): Tanh()
+  )
+)
+netD
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (1): LeakyReLU(negative_slope=0.2)
+    (2): Sequential(
+      (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (4): Sequential(
+      (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (5): Sequential(
+      (0): Conv2d(512, 1024, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (6): Conv2d(1024, 1, kernel_size=(4, 4), stride=(2, 2))
+    (7): Sigmoid()
+  )
+)
+Starting Training Loop...
+[0/5][0/45]	Loss_D: 2.1433	Loss_G: 15.6198	D(x): 0.5394	D(G(z)): 0.6387 / 0.0000
+[1/5][0/45]	Loss_D: 0.0000	Loss_G: 45.1678	D(x): 1.0000	D(G(z)): 0.0000 / 0.0000
+[2/5][0/45]	Loss_D: 0.0000	Loss_G: 44.7753	D(x): 1.0000	D(G(z)): 0.0000 / 0.0000
+[3/5][0/45]	Loss_D: 0.0000	Loss_G: 45.0056	D(x): 1.0000	D(G(z)): 0.0000 / 0.0000
+[4/5][0/45]	Loss_D: 0.0000	Loss_G: 44.9302	D(x): 1.0000	D(G(z)): 0.0000 / 0.0000

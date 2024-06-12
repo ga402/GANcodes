@@ -1,0 +1,11 @@
++ set -o errtrace
++ export CUBLAS_WORKSPACE_CONFIG=:16:8
++ CUBLAS_WORKSPACE_CONFIG=:16:8
++ python /rds/general/user/ga402/home/009_GAN/001_2D_DBGAN/dbgan2d.py --project /rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/DBGAN2d --dataroot /rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/IMAGES2D --workers 2 --batch_size 128 --image_size 128 --nc 3 --nz 100 --ngf 64 --ndf 64 --num_epochs 20 --lr 0.00001 --beta1 0.5 --ngpu 1 --accessory_info 'DBGAN2d; Wasserstein GAN attempt'
+[W Context.cpp:70] Warning: torch.use_deterministic_algorithms is in beta, and its design and functionality may change in the future. (function operator())
+Traceback (most recent call last):
+  File "/rds/general/user/ga402/home/009_GAN/001_2D_DBGAN/dbgan2d.py", line 215, in <module>
+    testm()
+  File "/rds/general/user/ga402/home/009_GAN/001_2D_DBGAN/models.py", line 110, in testm
+    assert D(x).shape == (N, 1, 1, 1)
+AssertionError

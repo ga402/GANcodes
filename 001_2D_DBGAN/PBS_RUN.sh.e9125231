@@ -1,0 +1,21 @@
++ set -o errtrace
++ python /rds/general/user/ga402/home/009_GAN/001_2D_DBGAN/dbgan2d.py --project /rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/DBGAN2d --dataroot /rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/IMAGES2D --workers 2 --batch_size 128 --image_size 128 --nc 3 --nz 100 --ngf 64 --ndf 64 --num_epochs 5 --lr 0.0002 --beta1 0.5 --ngpu 1
+[W Context.cpp:70] Warning: torch.use_deterministic_algorithms is in beta, and its design and functionality may change in the future. (function operator())
+Traceback (most recent call last):
+  File "/rds/general/user/ga402/home/009_GAN/001_2D_DBGAN/dbgan2d.py", line 224, in <module>
+    output = netD(fake.detach()).view(-1)
+  File "/rds/general/user/ga402/home/miniconda/envs/yoloV5_model/lib/python3.6/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/rds/general/user/ga402/home/009_GAN/001_2D_DBGAN/models.py", line 97, in forward
+    return self.main(input)
+  File "/rds/general/user/ga402/home/miniconda/envs/yoloV5_model/lib/python3.6/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/rds/general/user/ga402/home/miniconda/envs/yoloV5_model/lib/python3.6/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/rds/general/user/ga402/home/miniconda/envs/yoloV5_model/lib/python3.6/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/rds/general/user/ga402/home/miniconda/envs/yoloV5_model/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 399, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/rds/general/user/ga402/home/miniconda/envs/yoloV5_model/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 396, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Calculated padded input size per channel: (3 x 3). Kernel size: (4 x 4). Kernel size can't be greater than actual input size

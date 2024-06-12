@@ -1,0 +1,11 @@
++ set -o errtrace
++ python /rds/general/user/ga402/home/009_GAN/001_2D_DBGAN/dbgan2d.py --project /rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/DBGAN2d --dataroot /rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/IMAGES2D --workers 2 --batch_size 128 --image_size 128 --nc 3 --nz 100 --ngf 64 --ndf 64 --num_epochs 200 --lr 0.0002 --beta1 0.5 --ngpu 1
+[W Context.cpp:70] Warning: torch.use_deterministic_algorithms is in beta, and its design and functionality may change in the future. (function operator())
+Traceback (most recent call last):
+  File "/rds/general/user/ga402/home/009_GAN/001_2D_DBGAN/dbgan2d.py", line 259, in <module>
+    save_fake_images,
+  File "/rds/general/user/ga402/home/009_GAN/001_2D_DBGAN/models.py", line 229, in fit
+    save_fn(epoch + 1, gen, fixed_noise, save_dir)
+  File "/rds/general/user/ga402/home/009_GAN/001_2D_DBGAN/models.py", line 164, in save_fake_images
+    assert isinstance(save_dir, Path.PurePath), "save_dir is not a pathlib object"
+AttributeError: type object 'Path' has no attribute 'PurePath'

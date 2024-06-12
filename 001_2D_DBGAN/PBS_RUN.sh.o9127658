@@ -1,0 +1,1064 @@
+Random Seed:  999
+testing models
+Succes test for 3x128x128 data
+ -------- netG ----------
+Generator(
+  (main): Sequential(
+    (0): Sequential(
+      (0): ConvTranspose2d(100, 2048, kernel_size=(4, 4), stride=(2, 2), bias=False)
+      (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Sequential(
+      (0): ConvTranspose2d(2048, 1024, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Sequential(
+      (0): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (3): Sequential(
+      (0): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (4): Sequential(
+      (0): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (5): ConvTranspose2d(128, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (6): Tanh()
+  )
+)
+ -------- netD ----------
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (1): LeakyReLU(negative_slope=0.2)
+    (2): Sequential(
+      (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (4): Sequential(
+      (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (5): Sequential(
+      (0): Conv2d(512, 1024, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (6): Conv2d(1024, 1, kernel_size=(4, 4), stride=(2, 2))
+    (7): Sigmoid()
+  )
+)
+Epoch [1/200], Step [10/45], disc_loss: 0.1051, gen_loss: 48.8106, D(x): 0.95, D (G(z)): 0.00
+Epoch [1/200], Step [20/45], disc_loss: 0.0018, gen_loss: 59.7097, D(x): 1.00, D (G(z)): 0.00
+Epoch [1/200], Step [30/45], disc_loss: 0.0001, gen_loss: 59.4803, D(x): 1.00, D (G(z)): 0.00
+Epoch [1/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.6683, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0001.png
+Epoch [2/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.4622, D(x): 1.00, D (G(z)): 0.00
+Epoch [2/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.5176, D(x): 1.00, D (G(z)): 0.00
+Epoch [2/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.6501, D(x): 1.00, D (G(z)): 0.00
+Epoch [2/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.5690, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0002.png
+Epoch [3/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.4851, D(x): 1.00, D (G(z)): 0.00
+Epoch [3/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.4957, D(x): 1.00, D (G(z)): 0.00
+Epoch [3/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.5368, D(x): 1.00, D (G(z)): 0.00
+Epoch [3/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.4004, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0003.png
+Epoch [4/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.3567, D(x): 1.00, D (G(z)): 0.00
+Epoch [4/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.5089, D(x): 1.00, D (G(z)): 0.00
+Epoch [4/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.4716, D(x): 1.00, D (G(z)): 0.00
+Epoch [4/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.4141, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0004.png
+Epoch [5/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.4309, D(x): 1.00, D (G(z)): 0.00
+Epoch [5/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1362, D(x): 1.00, D (G(z)): 0.00
+Epoch [5/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.3932, D(x): 1.00, D (G(z)): 0.00
+Epoch [5/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.3085, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0005.png
+Epoch [6/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.5918, D(x): 1.00, D (G(z)): 0.00
+Epoch [6/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.3555, D(x): 1.00, D (G(z)): 0.00
+Epoch [6/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.3162, D(x): 1.00, D (G(z)): 0.00
+Epoch [6/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.4209, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0006.png
+Epoch [7/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2538, D(x): 1.00, D (G(z)): 0.00
+Epoch [7/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.5330, D(x): 1.00, D (G(z)): 0.00
+Epoch [7/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.3835, D(x): 1.00, D (G(z)): 0.00
+Epoch [7/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.4180, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0007.png
+Epoch [8/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.3661, D(x): 1.00, D (G(z)): 0.00
+Epoch [8/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.4579, D(x): 1.00, D (G(z)): 0.00
+Epoch [8/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.4275, D(x): 1.00, D (G(z)): 0.00
+Epoch [8/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2461, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0008.png
+Epoch [9/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.4885, D(x): 1.00, D (G(z)): 0.00
+Epoch [9/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1234, D(x): 1.00, D (G(z)): 0.00
+Epoch [9/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.4792, D(x): 1.00, D (G(z)): 0.00
+Epoch [9/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.3854, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0009.png
+Epoch [10/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.3699, D(x): 1.00, D (G(z)): 0.00
+Epoch [10/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2670, D(x): 1.00, D (G(z)): 0.00
+Epoch [10/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2529, D(x): 1.00, D (G(z)): 0.00
+Epoch [10/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.3384, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0010.png
+Epoch [11/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.4569, D(x): 1.00, D (G(z)): 0.00
+Epoch [11/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.3962, D(x): 1.00, D (G(z)): 0.00
+Epoch [11/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.4944, D(x): 1.00, D (G(z)): 0.00
+Epoch [11/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.3973, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0011.png
+Epoch [12/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.3264, D(x): 1.00, D (G(z)): 0.00
+Epoch [12/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2670, D(x): 1.00, D (G(z)): 0.00
+Epoch [12/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2951, D(x): 1.00, D (G(z)): 0.00
+Epoch [12/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2576, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0012.png
+Epoch [13/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.4732, D(x): 1.00, D (G(z)): 0.00
+Epoch [13/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.4477, D(x): 1.00, D (G(z)): 0.00
+Epoch [13/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2782, D(x): 1.00, D (G(z)): 0.00
+Epoch [13/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1751, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0013.png
+Epoch [14/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2174, D(x): 1.00, D (G(z)): 0.00
+Epoch [14/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.3641, D(x): 1.00, D (G(z)): 0.00
+Epoch [14/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.3360, D(x): 1.00, D (G(z)): 0.00
+Epoch [14/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2559, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0014.png
+Epoch [15/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.3086, D(x): 1.00, D (G(z)): 0.00
+Epoch [15/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.3901, D(x): 1.00, D (G(z)): 0.00
+Epoch [15/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2440, D(x): 1.00, D (G(z)): 0.00
+Epoch [15/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.3775, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0015.png
+Epoch [16/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2994, D(x): 1.00, D (G(z)): 0.00
+Epoch [16/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1440, D(x): 1.00, D (G(z)): 0.00
+Epoch [16/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.3999, D(x): 1.00, D (G(z)): 0.00
+Epoch [16/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1776, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0016.png
+Epoch [17/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2378, D(x): 1.00, D (G(z)): 0.00
+Epoch [17/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2624, D(x): 1.00, D (G(z)): 0.00
+Epoch [17/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2404, D(x): 1.00, D (G(z)): 0.00
+Epoch [17/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2808, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0017.png
+Epoch [18/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1953, D(x): 1.00, D (G(z)): 0.00
+Epoch [18/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.4956, D(x): 1.00, D (G(z)): 0.00
+Epoch [18/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2947, D(x): 1.00, D (G(z)): 0.00
+Epoch [18/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0660, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0018.png
+Epoch [19/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2982, D(x): 1.00, D (G(z)): 0.00
+Epoch [19/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2399, D(x): 1.00, D (G(z)): 0.00
+Epoch [19/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1695, D(x): 1.00, D (G(z)): 0.00
+Epoch [19/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.3963, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0019.png
+Epoch [20/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.3427, D(x): 1.00, D (G(z)): 0.00
+Epoch [20/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2099, D(x): 1.00, D (G(z)): 0.00
+Epoch [20/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.3236, D(x): 1.00, D (G(z)): 0.00
+Epoch [20/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.3604, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0020.png
+Epoch [21/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.4205, D(x): 1.00, D (G(z)): 0.00
+Epoch [21/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2586, D(x): 1.00, D (G(z)): 0.00
+Epoch [21/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1835, D(x): 1.00, D (G(z)): 0.00
+Epoch [21/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.3403, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0021.png
+Epoch [22/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.3749, D(x): 1.00, D (G(z)): 0.00
+Epoch [22/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2306, D(x): 1.00, D (G(z)): 0.00
+Epoch [22/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2599, D(x): 1.00, D (G(z)): 0.00
+Epoch [22/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2675, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0022.png
+Epoch [23/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2051, D(x): 1.00, D (G(z)): 0.00
+Epoch [23/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2340, D(x): 1.00, D (G(z)): 0.00
+Epoch [23/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1187, D(x): 1.00, D (G(z)): 0.00
+Epoch [23/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2659, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0023.png
+Epoch [24/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2435, D(x): 1.00, D (G(z)): 0.00
+Epoch [24/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1012, D(x): 1.00, D (G(z)): 0.00
+Epoch [24/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2749, D(x): 1.00, D (G(z)): 0.00
+Epoch [24/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1060, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0024.png
+Epoch [25/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1010, D(x): 1.00, D (G(z)): 0.00
+Epoch [25/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2851, D(x): 1.00, D (G(z)): 0.00
+Epoch [25/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1783, D(x): 1.00, D (G(z)): 0.00
+Epoch [25/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0317, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0025.png
+Epoch [26/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1063, D(x): 1.00, D (G(z)): 0.00
+Epoch [26/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2085, D(x): 1.00, D (G(z)): 0.00
+Epoch [26/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1272, D(x): 1.00, D (G(z)): 0.00
+Epoch [26/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2327, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0026.png
+Epoch [27/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2320, D(x): 1.00, D (G(z)): 0.00
+Epoch [27/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1083, D(x): 1.00, D (G(z)): 0.00
+Epoch [27/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1002, D(x): 1.00, D (G(z)): 0.00
+Epoch [27/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1984, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0027.png
+Epoch [28/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.4147, D(x): 1.00, D (G(z)): 0.00
+Epoch [28/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1573, D(x): 1.00, D (G(z)): 0.00
+Epoch [28/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1606, D(x): 1.00, D (G(z)): 0.00
+Epoch [28/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2591, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0028.png
+Epoch [29/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2013, D(x): 1.00, D (G(z)): 0.00
+Epoch [29/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0410, D(x): 1.00, D (G(z)): 0.00
+Epoch [29/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1309, D(x): 1.00, D (G(z)): 0.00
+Epoch [29/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0748, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0029.png
+Epoch [30/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2093, D(x): 1.00, D (G(z)): 0.00
+Epoch [30/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.3962, D(x): 1.00, D (G(z)): 0.00
+Epoch [30/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0980, D(x): 1.00, D (G(z)): 0.00
+Epoch [30/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2298, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0030.png
+Epoch [31/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2072, D(x): 1.00, D (G(z)): 0.00
+Epoch [31/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.3142, D(x): 1.00, D (G(z)): 0.00
+Epoch [31/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1286, D(x): 1.00, D (G(z)): 0.00
+Epoch [31/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2666, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0031.png
+Epoch [32/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0801, D(x): 1.00, D (G(z)): 0.00
+Epoch [32/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1669, D(x): 1.00, D (G(z)): 0.00
+Epoch [32/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2392, D(x): 1.00, D (G(z)): 0.00
+Epoch [32/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.3635, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0032.png
+Epoch [33/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1414, D(x): 1.00, D (G(z)): 0.00
+Epoch [33/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2134, D(x): 1.00, D (G(z)): 0.00
+Epoch [33/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0187, D(x): 1.00, D (G(z)): 0.00
+Epoch [33/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2452, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0033.png
+Epoch [34/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0436, D(x): 1.00, D (G(z)): 0.00
+Epoch [34/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0884, D(x): 1.00, D (G(z)): 0.00
+Epoch [34/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0687, D(x): 1.00, D (G(z)): 0.00
+Epoch [34/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1078, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0034.png
+Epoch [35/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1321, D(x): 1.00, D (G(z)): 0.00
+Epoch [35/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2764, D(x): 1.00, D (G(z)): 0.00
+Epoch [35/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.3647, D(x): 1.00, D (G(z)): 0.00
+Epoch [35/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2242, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0035.png
+Epoch [36/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2051, D(x): 1.00, D (G(z)): 0.00
+Epoch [36/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1790, D(x): 1.00, D (G(z)): 0.00
+Epoch [36/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0148, D(x): 1.00, D (G(z)): 0.00
+Epoch [36/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0109, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0036.png
+Epoch [37/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2585, D(x): 1.00, D (G(z)): 0.00
+Epoch [37/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0856, D(x): 1.00, D (G(z)): 0.00
+Epoch [37/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1509, D(x): 1.00, D (G(z)): 0.00
+Epoch [37/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2463, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0037.png
+Epoch [38/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0890, D(x): 1.00, D (G(z)): 0.00
+Epoch [38/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.3679, D(x): 1.00, D (G(z)): 0.00
+Epoch [38/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0680, D(x): 1.00, D (G(z)): 0.00
+Epoch [38/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2817, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0038.png
+Epoch [39/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0270, D(x): 1.00, D (G(z)): 0.00
+Epoch [39/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0226, D(x): 1.00, D (G(z)): 0.00
+Epoch [39/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2150, D(x): 1.00, D (G(z)): 0.00
+Epoch [39/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1325, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0039.png
+Epoch [40/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1959, D(x): 1.00, D (G(z)): 0.00
+Epoch [40/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1131, D(x): 1.00, D (G(z)): 0.00
+Epoch [40/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8992, D(x): 1.00, D (G(z)): 0.00
+Epoch [40/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.2155, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0040.png
+Epoch [41/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.2381, D(x): 1.00, D (G(z)): 0.00
+Epoch [41/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1107, D(x): 1.00, D (G(z)): 0.00
+Epoch [41/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2268, D(x): 1.00, D (G(z)): 0.00
+Epoch [41/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1479, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0041.png
+Epoch [42/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1558, D(x): 1.00, D (G(z)): 0.00
+Epoch [42/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.2936, D(x): 1.00, D (G(z)): 0.00
+Epoch [42/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1993, D(x): 1.00, D (G(z)): 0.00
+Epoch [42/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9632, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0042.png
+Epoch [43/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0534, D(x): 1.00, D (G(z)): 0.00
+Epoch [43/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1409, D(x): 1.00, D (G(z)): 0.00
+Epoch [43/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.2145, D(x): 1.00, D (G(z)): 0.00
+Epoch [43/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1103, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0043.png
+Epoch [44/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9906, D(x): 1.00, D (G(z)): 0.00
+Epoch [44/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1600, D(x): 1.00, D (G(z)): 0.00
+Epoch [44/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0087, D(x): 1.00, D (G(z)): 0.00
+Epoch [44/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1647, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0044.png
+Epoch [45/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.3250, D(x): 1.00, D (G(z)): 0.00
+Epoch [45/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1121, D(x): 1.00, D (G(z)): 0.00
+Epoch [45/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9002, D(x): 1.00, D (G(z)): 0.00
+Epoch [45/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0482, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0045.png
+Epoch [46/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0470, D(x): 1.00, D (G(z)): 0.00
+Epoch [46/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8830, D(x): 1.00, D (G(z)): 0.00
+Epoch [46/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1512, D(x): 1.00, D (G(z)): 0.00
+Epoch [46/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0561, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0046.png
+Epoch [47/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0230, D(x): 1.00, D (G(z)): 0.00
+Epoch [47/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0403, D(x): 1.00, D (G(z)): 0.00
+Epoch [47/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1642, D(x): 1.00, D (G(z)): 0.00
+Epoch [47/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1493, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0047.png
+Epoch [48/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9711, D(x): 1.00, D (G(z)): 0.00
+Epoch [48/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0906, D(x): 1.00, D (G(z)): 0.00
+Epoch [48/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0636, D(x): 1.00, D (G(z)): 0.00
+Epoch [48/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0954, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0048.png
+Epoch [49/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0604, D(x): 1.00, D (G(z)): 0.00
+Epoch [49/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0388, D(x): 1.00, D (G(z)): 0.00
+Epoch [49/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0782, D(x): 1.00, D (G(z)): 0.00
+Epoch [49/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1143, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0049.png
+Epoch [50/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9410, D(x): 1.00, D (G(z)): 0.00
+Epoch [50/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9904, D(x): 1.00, D (G(z)): 0.00
+Epoch [50/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1013, D(x): 1.00, D (G(z)): 0.00
+Epoch [50/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8709, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0050.png
+Epoch [51/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1779, D(x): 1.00, D (G(z)): 0.00
+Epoch [51/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0596, D(x): 1.00, D (G(z)): 0.00
+Epoch [51/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0923, D(x): 1.00, D (G(z)): 0.00
+Epoch [51/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1140, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0051.png
+Epoch [52/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1056, D(x): 1.00, D (G(z)): 0.00
+Epoch [52/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1104, D(x): 1.00, D (G(z)): 0.00
+Epoch [52/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1149, D(x): 1.00, D (G(z)): 0.00
+Epoch [52/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1304, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0052.png
+Epoch [53/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9654, D(x): 1.00, D (G(z)): 0.00
+Epoch [53/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9910, D(x): 1.00, D (G(z)): 0.00
+Epoch [53/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0426, D(x): 1.00, D (G(z)): 0.00
+Epoch [53/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1328, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0053.png
+Epoch [54/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0871, D(x): 1.00, D (G(z)): 0.00
+Epoch [54/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1383, D(x): 1.00, D (G(z)): 0.00
+Epoch [54/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1487, D(x): 1.00, D (G(z)): 0.00
+Epoch [54/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1847, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0054.png
+Epoch [55/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0238, D(x): 1.00, D (G(z)): 0.00
+Epoch [55/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9731, D(x): 1.00, D (G(z)): 0.00
+Epoch [55/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9391, D(x): 1.00, D (G(z)): 0.00
+Epoch [55/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0246, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0055.png
+Epoch [56/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0813, D(x): 1.00, D (G(z)): 0.00
+Epoch [56/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0455, D(x): 1.00, D (G(z)): 0.00
+Epoch [56/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1243, D(x): 1.00, D (G(z)): 0.00
+Epoch [56/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0228, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0056.png
+Epoch [57/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0830, D(x): 1.00, D (G(z)): 0.00
+Epoch [57/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8997, D(x): 1.00, D (G(z)): 0.00
+Epoch [57/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1540, D(x): 1.00, D (G(z)): 0.00
+Epoch [57/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0626, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0057.png
+Epoch [58/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0884, D(x): 1.00, D (G(z)): 0.00
+Epoch [58/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9552, D(x): 1.00, D (G(z)): 0.00
+Epoch [58/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0712, D(x): 1.00, D (G(z)): 0.00
+Epoch [58/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1154, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0058.png
+Epoch [59/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8988, D(x): 1.00, D (G(z)): 0.00
+Epoch [59/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8654, D(x): 1.00, D (G(z)): 0.00
+Epoch [59/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0843, D(x): 1.00, D (G(z)): 0.00
+Epoch [59/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1427, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0059.png
+Epoch [60/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0978, D(x): 1.00, D (G(z)): 0.00
+Epoch [60/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0261, D(x): 1.00, D (G(z)): 0.00
+Epoch [60/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1669, D(x): 1.00, D (G(z)): 0.00
+Epoch [60/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0051, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0060.png
+Epoch [61/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9534, D(x): 1.00, D (G(z)): 0.00
+Epoch [61/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9802, D(x): 1.00, D (G(z)): 0.00
+Epoch [61/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1068, D(x): 1.00, D (G(z)): 0.00
+Epoch [61/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1164, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0061.png
+Epoch [62/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0750, D(x): 1.00, D (G(z)): 0.00
+Epoch [62/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1205, D(x): 1.00, D (G(z)): 0.00
+Epoch [62/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9580, D(x): 1.00, D (G(z)): 0.00
+Epoch [62/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0238, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0062.png
+Epoch [63/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0490, D(x): 1.00, D (G(z)): 0.00
+Epoch [63/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0159, D(x): 1.00, D (G(z)): 0.00
+Epoch [63/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0217, D(x): 1.00, D (G(z)): 0.00
+Epoch [63/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1880, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0063.png
+Epoch [64/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0697, D(x): 1.00, D (G(z)): 0.00
+Epoch [64/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0140, D(x): 1.00, D (G(z)): 0.00
+Epoch [64/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1884, D(x): 1.00, D (G(z)): 0.00
+Epoch [64/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0156, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0064.png
+Epoch [65/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1376, D(x): 1.00, D (G(z)): 0.00
+Epoch [65/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0291, D(x): 1.00, D (G(z)): 0.00
+Epoch [65/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9766, D(x): 1.00, D (G(z)): 0.00
+Epoch [65/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1157, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0065.png
+Epoch [66/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9578, D(x): 1.00, D (G(z)): 0.00
+Epoch [66/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1576, D(x): 1.00, D (G(z)): 0.00
+Epoch [66/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1377, D(x): 1.00, D (G(z)): 0.00
+Epoch [66/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1711, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0066.png
+Epoch [67/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0200, D(x): 1.00, D (G(z)): 0.00
+Epoch [67/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1850, D(x): 1.00, D (G(z)): 0.00
+Epoch [67/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9581, D(x): 1.00, D (G(z)): 0.00
+Epoch [67/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0391, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0067.png
+Epoch [68/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8885, D(x): 1.00, D (G(z)): 0.00
+Epoch [68/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0619, D(x): 1.00, D (G(z)): 0.00
+Epoch [68/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0770, D(x): 1.00, D (G(z)): 0.00
+Epoch [68/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0642, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0068.png
+Epoch [69/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9220, D(x): 1.00, D (G(z)): 0.00
+Epoch [69/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9984, D(x): 1.00, D (G(z)): 0.00
+Epoch [69/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1769, D(x): 1.00, D (G(z)): 0.00
+Epoch [69/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0111, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0069.png
+Epoch [70/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0692, D(x): 1.00, D (G(z)): 0.00
+Epoch [70/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9977, D(x): 1.00, D (G(z)): 0.00
+Epoch [70/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9125, D(x): 1.00, D (G(z)): 0.00
+Epoch [70/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1161, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0070.png
+Epoch [71/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1005, D(x): 1.00, D (G(z)): 0.00
+Epoch [71/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9347, D(x): 1.00, D (G(z)): 0.00
+Epoch [71/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0507, D(x): 1.00, D (G(z)): 0.00
+Epoch [71/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9450, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0071.png
+Epoch [72/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1090, D(x): 1.00, D (G(z)): 0.00
+Epoch [72/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9895, D(x): 1.00, D (G(z)): 0.00
+Epoch [72/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0246, D(x): 1.00, D (G(z)): 0.00
+Epoch [72/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8736, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0072.png
+Epoch [73/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0714, D(x): 1.00, D (G(z)): 0.00
+Epoch [73/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9669, D(x): 1.00, D (G(z)): 0.00
+Epoch [73/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0766, D(x): 1.00, D (G(z)): 0.00
+Epoch [73/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0229, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0073.png
+Epoch [74/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9908, D(x): 1.00, D (G(z)): 0.00
+Epoch [74/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1570, D(x): 1.00, D (G(z)): 0.00
+Epoch [74/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1478, D(x): 1.00, D (G(z)): 0.00
+Epoch [74/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9857, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0074.png
+Epoch [75/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8939, D(x): 1.00, D (G(z)): 0.00
+Epoch [75/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0408, D(x): 1.00, D (G(z)): 0.00
+Epoch [75/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0853, D(x): 1.00, D (G(z)): 0.00
+Epoch [75/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0680, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0075.png
+Epoch [76/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0434, D(x): 1.00, D (G(z)): 0.00
+Epoch [76/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8695, D(x): 1.00, D (G(z)): 0.00
+Epoch [76/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9885, D(x): 1.00, D (G(z)): 0.00
+Epoch [76/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0249, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0076.png
+Epoch [77/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0448, D(x): 1.00, D (G(z)): 0.00
+Epoch [77/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0340, D(x): 1.00, D (G(z)): 0.00
+Epoch [77/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9636, D(x): 1.00, D (G(z)): 0.00
+Epoch [77/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9269, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0077.png
+Epoch [78/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8988, D(x): 1.00, D (G(z)): 0.00
+Epoch [78/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0045, D(x): 1.00, D (G(z)): 0.00
+Epoch [78/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9213, D(x): 1.00, D (G(z)): 0.00
+Epoch [78/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9143, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0078.png
+Epoch [79/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8715, D(x): 1.00, D (G(z)): 0.00
+Epoch [79/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8188, D(x): 1.00, D (G(z)): 0.00
+Epoch [79/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9411, D(x): 1.00, D (G(z)): 0.00
+Epoch [79/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8339, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0079.png
+Epoch [80/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1092, D(x): 1.00, D (G(z)): 0.00
+Epoch [80/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0416, D(x): 1.00, D (G(z)): 0.00
+Epoch [80/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1406, D(x): 1.00, D (G(z)): 0.00
+Epoch [80/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0792, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0080.png
+Epoch [81/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0399, D(x): 1.00, D (G(z)): 0.00
+Epoch [81/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0217, D(x): 1.00, D (G(z)): 0.00
+Epoch [81/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9702, D(x): 1.00, D (G(z)): 0.00
+Epoch [81/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0553, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0081.png
+Epoch [82/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1665, D(x): 1.00, D (G(z)): 0.00
+Epoch [82/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0553, D(x): 1.00, D (G(z)): 0.00
+Epoch [82/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1556, D(x): 1.00, D (G(z)): 0.00
+Epoch [82/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8844, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0082.png
+Epoch [83/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1823, D(x): 1.00, D (G(z)): 0.00
+Epoch [83/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0433, D(x): 1.00, D (G(z)): 0.00
+Epoch [83/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1390, D(x): 1.00, D (G(z)): 0.00
+Epoch [83/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9332, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0083.png
+Epoch [84/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0981, D(x): 1.00, D (G(z)): 0.00
+Epoch [84/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0277, D(x): 1.00, D (G(z)): 0.00
+Epoch [84/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7837, D(x): 1.00, D (G(z)): 0.00
+Epoch [84/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0235, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0084.png
+Epoch [85/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0747, D(x): 1.00, D (G(z)): 0.00
+Epoch [85/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9716, D(x): 1.00, D (G(z)): 0.00
+Epoch [85/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8748, D(x): 1.00, D (G(z)): 0.00
+Epoch [85/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0350, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0085.png
+Epoch [86/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0525, D(x): 1.00, D (G(z)): 0.00
+Epoch [86/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0071, D(x): 1.00, D (G(z)): 0.00
+Epoch [86/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0414, D(x): 1.00, D (G(z)): 0.00
+Epoch [86/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9929, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0086.png
+Epoch [87/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9316, D(x): 1.00, D (G(z)): 0.00
+Epoch [87/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0044, D(x): 1.00, D (G(z)): 0.00
+Epoch [87/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1231, D(x): 1.00, D (G(z)): 0.00
+Epoch [87/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0343, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0087.png
+Epoch [88/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0785, D(x): 1.00, D (G(z)): 0.00
+Epoch [88/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9068, D(x): 1.00, D (G(z)): 0.00
+Epoch [88/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8967, D(x): 1.00, D (G(z)): 0.00
+Epoch [88/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9269, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0088.png
+Epoch [89/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0900, D(x): 1.00, D (G(z)): 0.00
+Epoch [89/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8933, D(x): 1.00, D (G(z)): 0.00
+Epoch [89/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0405, D(x): 1.00, D (G(z)): 0.00
+Epoch [89/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9181, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0089.png
+Epoch [90/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0529, D(x): 1.00, D (G(z)): 0.00
+Epoch [90/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9227, D(x): 1.00, D (G(z)): 0.00
+Epoch [90/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0470, D(x): 1.00, D (G(z)): 0.00
+Epoch [90/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0210, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0090.png
+Epoch [91/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0457, D(x): 1.00, D (G(z)): 0.00
+Epoch [91/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1394, D(x): 1.00, D (G(z)): 0.00
+Epoch [91/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1362, D(x): 1.00, D (G(z)): 0.00
+Epoch [91/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7588, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0091.png
+Epoch [92/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9121, D(x): 1.00, D (G(z)): 0.00
+Epoch [92/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9568, D(x): 1.00, D (G(z)): 0.00
+Epoch [92/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9622, D(x): 1.00, D (G(z)): 0.00
+Epoch [92/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0714, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0092.png
+Epoch [93/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0184, D(x): 1.00, D (G(z)): 0.00
+Epoch [93/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9335, D(x): 1.00, D (G(z)): 0.00
+Epoch [93/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0004, D(x): 1.00, D (G(z)): 0.00
+Epoch [93/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1808, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0093.png
+Epoch [94/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9543, D(x): 1.00, D (G(z)): 0.00
+Epoch [94/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8920, D(x): 1.00, D (G(z)): 0.00
+Epoch [94/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0258, D(x): 1.00, D (G(z)): 0.00
+Epoch [94/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0670, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0094.png
+Epoch [95/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9560, D(x): 1.00, D (G(z)): 0.00
+Epoch [95/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0444, D(x): 1.00, D (G(z)): 0.00
+Epoch [95/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9720, D(x): 1.00, D (G(z)): 0.00
+Epoch [95/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7886, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0095.png
+Epoch [96/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.1111, D(x): 1.00, D (G(z)): 0.00
+Epoch [96/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9818, D(x): 1.00, D (G(z)): 0.00
+Epoch [96/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8189, D(x): 1.00, D (G(z)): 0.00
+Epoch [96/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9212, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0096.png
+Epoch [97/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8644, D(x): 1.00, D (G(z)): 0.00
+Epoch [97/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8265, D(x): 1.00, D (G(z)): 0.00
+Epoch [97/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9428, D(x): 1.00, D (G(z)): 0.00
+Epoch [97/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0173, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0097.png
+Epoch [98/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9976, D(x): 1.00, D (G(z)): 0.00
+Epoch [98/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0161, D(x): 1.00, D (G(z)): 0.00
+Epoch [98/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9163, D(x): 1.00, D (G(z)): 0.00
+Epoch [98/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8989, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0098.png
+Epoch [99/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8314, D(x): 1.00, D (G(z)): 0.00
+Epoch [99/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9317, D(x): 1.00, D (G(z)): 0.00
+Epoch [99/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9976, D(x): 1.00, D (G(z)): 0.00
+Epoch [99/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9470, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0099.png
+Epoch [100/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8684, D(x): 1.00, D (G(z)): 0.00
+Epoch [100/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9115, D(x): 1.00, D (G(z)): 0.00
+Epoch [100/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8720, D(x): 1.00, D (G(z)): 0.00
+Epoch [100/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9196, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0100.png
+Epoch [101/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9356, D(x): 1.00, D (G(z)): 0.00
+Epoch [101/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9924, D(x): 1.00, D (G(z)): 0.00
+Epoch [101/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8398, D(x): 1.00, D (G(z)): 0.00
+Epoch [101/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1370, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0101.png
+Epoch [102/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9935, D(x): 1.00, D (G(z)): 0.00
+Epoch [102/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9124, D(x): 1.00, D (G(z)): 0.00
+Epoch [102/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9418, D(x): 1.00, D (G(z)): 0.00
+Epoch [102/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9740, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0102.png
+Epoch [103/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9877, D(x): 1.00, D (G(z)): 0.00
+Epoch [103/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0415, D(x): 1.00, D (G(z)): 0.00
+Epoch [103/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9051, D(x): 1.00, D (G(z)): 0.00
+Epoch [103/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8783, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0103.png
+Epoch [104/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9900, D(x): 1.00, D (G(z)): 0.00
+Epoch [104/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8779, D(x): 1.00, D (G(z)): 0.00
+Epoch [104/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9043, D(x): 1.00, D (G(z)): 0.00
+Epoch [104/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8537, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0104.png
+Epoch [105/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0303, D(x): 1.00, D (G(z)): 0.00
+Epoch [105/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1320, D(x): 1.00, D (G(z)): 0.00
+Epoch [105/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9866, D(x): 1.00, D (G(z)): 0.00
+Epoch [105/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9084, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0105.png
+Epoch [106/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9291, D(x): 1.00, D (G(z)): 0.00
+Epoch [106/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.0121, D(x): 1.00, D (G(z)): 0.00
+Epoch [106/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8282, D(x): 1.00, D (G(z)): 0.00
+Epoch [106/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9971, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0106.png
+Epoch [107/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8759, D(x): 1.00, D (G(z)): 0.00
+Epoch [107/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8428, D(x): 1.00, D (G(z)): 0.00
+Epoch [107/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8655, D(x): 1.00, D (G(z)): 0.00
+Epoch [107/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0134, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0107.png
+Epoch [108/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9082, D(x): 1.00, D (G(z)): 0.00
+Epoch [108/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1020, D(x): 1.00, D (G(z)): 0.00
+Epoch [108/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9432, D(x): 1.00, D (G(z)): 0.00
+Epoch [108/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8243, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0108.png
+Epoch [109/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9117, D(x): 1.00, D (G(z)): 0.00
+Epoch [109/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8625, D(x): 1.00, D (G(z)): 0.00
+Epoch [109/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8748, D(x): 1.00, D (G(z)): 0.00
+Epoch [109/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8787, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0109.png
+Epoch [110/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8897, D(x): 1.00, D (G(z)): 0.00
+Epoch [110/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8038, D(x): 1.00, D (G(z)): 0.00
+Epoch [110/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9218, D(x): 1.00, D (G(z)): 0.00
+Epoch [110/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9354, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0110.png
+Epoch [111/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8834, D(x): 1.00, D (G(z)): 0.00
+Epoch [111/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7875, D(x): 1.00, D (G(z)): 0.00
+Epoch [111/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0999, D(x): 1.00, D (G(z)): 0.00
+Epoch [111/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0854, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0111.png
+Epoch [112/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9348, D(x): 1.00, D (G(z)): 0.00
+Epoch [112/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9107, D(x): 1.00, D (G(z)): 0.00
+Epoch [112/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8616, D(x): 1.00, D (G(z)): 0.00
+Epoch [112/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9523, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0112.png
+Epoch [113/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0436, D(x): 1.00, D (G(z)): 0.00
+Epoch [113/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8015, D(x): 1.00, D (G(z)): 0.00
+Epoch [113/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8859, D(x): 1.00, D (G(z)): 0.00
+Epoch [113/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9302, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0113.png
+Epoch [114/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9139, D(x): 1.00, D (G(z)): 0.00
+Epoch [114/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9807, D(x): 1.00, D (G(z)): 0.00
+Epoch [114/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0848, D(x): 1.00, D (G(z)): 0.00
+Epoch [114/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9633, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0114.png
+Epoch [115/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9962, D(x): 1.00, D (G(z)): 0.00
+Epoch [115/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9408, D(x): 1.00, D (G(z)): 0.00
+Epoch [115/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.1409, D(x): 1.00, D (G(z)): 0.00
+Epoch [115/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8151, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0115.png
+Epoch [116/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0034, D(x): 1.00, D (G(z)): 0.00
+Epoch [116/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8901, D(x): 1.00, D (G(z)): 0.00
+Epoch [116/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9981, D(x): 1.00, D (G(z)): 0.00
+Epoch [116/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8328, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0116.png
+Epoch [117/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0473, D(x): 1.00, D (G(z)): 0.00
+Epoch [117/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9639, D(x): 1.00, D (G(z)): 0.00
+Epoch [117/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0906, D(x): 1.00, D (G(z)): 0.00
+Epoch [117/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8976, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0117.png
+Epoch [118/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8540, D(x): 1.00, D (G(z)): 0.00
+Epoch [118/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8419, D(x): 1.00, D (G(z)): 0.00
+Epoch [118/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8138, D(x): 1.00, D (G(z)): 0.00
+Epoch [118/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9637, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0118.png
+Epoch [119/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9938, D(x): 1.00, D (G(z)): 0.00
+Epoch [119/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8441, D(x): 1.00, D (G(z)): 0.00
+Epoch [119/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8661, D(x): 1.00, D (G(z)): 0.00
+Epoch [119/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8421, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0119.png
+Epoch [120/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8742, D(x): 1.00, D (G(z)): 0.00
+Epoch [120/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9384, D(x): 1.00, D (G(z)): 0.00
+Epoch [120/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7956, D(x): 1.00, D (G(z)): 0.00
+Epoch [120/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7811, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0120.png
+Epoch [121/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8399, D(x): 1.00, D (G(z)): 0.00
+Epoch [121/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1029, D(x): 1.00, D (G(z)): 0.00
+Epoch [121/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9685, D(x): 1.00, D (G(z)): 0.00
+Epoch [121/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8878, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0121.png
+Epoch [122/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9630, D(x): 1.00, D (G(z)): 0.00
+Epoch [122/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9458, D(x): 1.00, D (G(z)): 0.00
+Epoch [122/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9715, D(x): 1.00, D (G(z)): 0.00
+Epoch [122/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7406, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0122.png
+Epoch [123/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9442, D(x): 1.00, D (G(z)): 0.00
+Epoch [123/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8990, D(x): 1.00, D (G(z)): 0.00
+Epoch [123/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9582, D(x): 1.00, D (G(z)): 0.00
+Epoch [123/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8636, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0123.png
+Epoch [124/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9160, D(x): 1.00, D (G(z)): 0.00
+Epoch [124/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9175, D(x): 1.00, D (G(z)): 0.00
+Epoch [124/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9396, D(x): 1.00, D (G(z)): 0.00
+Epoch [124/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1661, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0124.png
+Epoch [125/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9472, D(x): 1.00, D (G(z)): 0.00
+Epoch [125/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8515, D(x): 1.00, D (G(z)): 0.00
+Epoch [125/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7905, D(x): 1.00, D (G(z)): 0.00
+Epoch [125/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8704, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0125.png
+Epoch [126/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8701, D(x): 1.00, D (G(z)): 0.00
+Epoch [126/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9157, D(x): 1.00, D (G(z)): 0.00
+Epoch [126/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9354, D(x): 1.00, D (G(z)): 0.00
+Epoch [126/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9116, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0126.png
+Epoch [127/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9824, D(x): 1.00, D (G(z)): 0.00
+Epoch [127/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9485, D(x): 1.00, D (G(z)): 0.00
+Epoch [127/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8229, D(x): 1.00, D (G(z)): 0.00
+Epoch [127/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8962, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0127.png
+Epoch [128/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8094, D(x): 1.00, D (G(z)): 0.00
+Epoch [128/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.6740, D(x): 1.00, D (G(z)): 0.00
+Epoch [128/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9464, D(x): 1.00, D (G(z)): 0.00
+Epoch [128/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8682, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0128.png
+Epoch [129/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0932, D(x): 1.00, D (G(z)): 0.00
+Epoch [129/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7572, D(x): 1.00, D (G(z)): 0.00
+Epoch [129/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8604, D(x): 1.00, D (G(z)): 0.00
+Epoch [129/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0017, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0129.png
+Epoch [130/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8369, D(x): 1.00, D (G(z)): 0.00
+Epoch [130/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9699, D(x): 1.00, D (G(z)): 0.00
+Epoch [130/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9001, D(x): 1.00, D (G(z)): 0.00
+Epoch [130/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9038, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0130.png
+Epoch [131/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9336, D(x): 1.00, D (G(z)): 0.00
+Epoch [131/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7443, D(x): 1.00, D (G(z)): 0.00
+Epoch [131/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9573, D(x): 1.00, D (G(z)): 0.00
+Epoch [131/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9404, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0131.png
+Epoch [132/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8429, D(x): 1.00, D (G(z)): 0.00
+Epoch [132/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7521, D(x): 1.00, D (G(z)): 0.00
+Epoch [132/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9822, D(x): 1.00, D (G(z)): 0.00
+Epoch [132/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9190, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0132.png
+Epoch [133/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7061, D(x): 1.00, D (G(z)): 0.00
+Epoch [133/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7704, D(x): 1.00, D (G(z)): 0.00
+Epoch [133/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0593, D(x): 1.00, D (G(z)): 0.00
+Epoch [133/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8183, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0133.png
+Epoch [134/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8744, D(x): 1.00, D (G(z)): 0.00
+Epoch [134/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7376, D(x): 1.00, D (G(z)): 0.00
+Epoch [134/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9380, D(x): 1.00, D (G(z)): 0.00
+Epoch [134/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7910, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0134.png
+Epoch [135/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9467, D(x): 1.00, D (G(z)): 0.00
+Epoch [135/200], Step [20/45], disc_loss: 0.0000, gen_loss: 59.1444, D(x): 1.00, D (G(z)): 0.00
+Epoch [135/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8759, D(x): 1.00, D (G(z)): 0.00
+Epoch [135/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8742, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0135.png
+Epoch [136/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7611, D(x): 1.00, D (G(z)): 0.00
+Epoch [136/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8102, D(x): 1.00, D (G(z)): 0.00
+Epoch [136/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8881, D(x): 1.00, D (G(z)): 0.00
+Epoch [136/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.1374, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0136.png
+Epoch [137/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8131, D(x): 1.00, D (G(z)): 0.00
+Epoch [137/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9238, D(x): 1.00, D (G(z)): 0.00
+Epoch [137/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9441, D(x): 1.00, D (G(z)): 0.00
+Epoch [137/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9538, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0137.png
+Epoch [138/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.6959, D(x): 1.00, D (G(z)): 0.00
+Epoch [138/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8120, D(x): 1.00, D (G(z)): 0.00
+Epoch [138/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9501, D(x): 1.00, D (G(z)): 0.00
+Epoch [138/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7600, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0138.png
+Epoch [139/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.6903, D(x): 1.00, D (G(z)): 0.00
+Epoch [139/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8280, D(x): 1.00, D (G(z)): 0.00
+Epoch [139/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7688, D(x): 1.00, D (G(z)): 0.00
+Epoch [139/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9937, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0139.png
+Epoch [140/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8939, D(x): 1.00, D (G(z)): 0.00
+Epoch [140/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9081, D(x): 1.00, D (G(z)): 0.00
+Epoch [140/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8096, D(x): 1.00, D (G(z)): 0.00
+Epoch [140/200], Step [40/45], disc_loss: 0.0000, gen_loss: 59.0120, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0140.png
+Epoch [141/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8906, D(x): 1.00, D (G(z)): 0.00
+Epoch [141/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8930, D(x): 1.00, D (G(z)): 0.00
+Epoch [141/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8518, D(x): 1.00, D (G(z)): 0.00
+Epoch [141/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9107, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0141.png
+Epoch [142/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8893, D(x): 1.00, D (G(z)): 0.00
+Epoch [142/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7245, D(x): 1.00, D (G(z)): 0.00
+Epoch [142/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9519, D(x): 1.00, D (G(z)): 0.00
+Epoch [142/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9401, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0142.png
+Epoch [143/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9031, D(x): 1.00, D (G(z)): 0.00
+Epoch [143/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9312, D(x): 1.00, D (G(z)): 0.00
+Epoch [143/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9067, D(x): 1.00, D (G(z)): 0.00
+Epoch [143/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8711, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0143.png
+Epoch [144/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9457, D(x): 1.00, D (G(z)): 0.00
+Epoch [144/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9477, D(x): 1.00, D (G(z)): 0.00
+Epoch [144/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7394, D(x): 1.00, D (G(z)): 0.00
+Epoch [144/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8697, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0144.png
+Epoch [145/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0502, D(x): 1.00, D (G(z)): 0.00
+Epoch [145/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9302, D(x): 1.00, D (G(z)): 0.00
+Epoch [145/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8653, D(x): 1.00, D (G(z)): 0.00
+Epoch [145/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9358, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0145.png
+Epoch [146/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7946, D(x): 1.00, D (G(z)): 0.00
+Epoch [146/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9885, D(x): 1.00, D (G(z)): 0.00
+Epoch [146/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7648, D(x): 1.00, D (G(z)): 0.00
+Epoch [146/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9006, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0146.png
+Epoch [147/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0297, D(x): 1.00, D (G(z)): 0.00
+Epoch [147/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9350, D(x): 1.00, D (G(z)): 0.00
+Epoch [147/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8745, D(x): 1.00, D (G(z)): 0.00
+Epoch [147/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9466, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0147.png
+Epoch [148/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8308, D(x): 1.00, D (G(z)): 0.00
+Epoch [148/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7256, D(x): 1.00, D (G(z)): 0.00
+Epoch [148/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8522, D(x): 1.00, D (G(z)): 0.00
+Epoch [148/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9577, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0148.png
+Epoch [149/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0725, D(x): 1.00, D (G(z)): 0.00
+Epoch [149/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9180, D(x): 1.00, D (G(z)): 0.00
+Epoch [149/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7811, D(x): 1.00, D (G(z)): 0.00
+Epoch [149/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9921, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0149.png
+Epoch [150/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9795, D(x): 1.00, D (G(z)): 0.00
+Epoch [150/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9232, D(x): 1.00, D (G(z)): 0.00
+Epoch [150/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8837, D(x): 1.00, D (G(z)): 0.00
+Epoch [150/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8038, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0150.png
+Epoch [151/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9011, D(x): 1.00, D (G(z)): 0.00
+Epoch [151/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7491, D(x): 1.00, D (G(z)): 0.00
+Epoch [151/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7589, D(x): 1.00, D (G(z)): 0.00
+Epoch [151/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.6898, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0151.png
+Epoch [152/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9003, D(x): 1.00, D (G(z)): 0.00
+Epoch [152/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9128, D(x): 1.00, D (G(z)): 0.00
+Epoch [152/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8401, D(x): 1.00, D (G(z)): 0.00
+Epoch [152/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7162, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0152.png
+Epoch [153/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9344, D(x): 1.00, D (G(z)): 0.00
+Epoch [153/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9475, D(x): 1.00, D (G(z)): 0.00
+Epoch [153/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8312, D(x): 1.00, D (G(z)): 0.00
+Epoch [153/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7675, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0153.png
+Epoch [154/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8558, D(x): 1.00, D (G(z)): 0.00
+Epoch [154/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7556, D(x): 1.00, D (G(z)): 0.00
+Epoch [154/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7716, D(x): 1.00, D (G(z)): 0.00
+Epoch [154/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8951, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0154.png
+Epoch [155/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8168, D(x): 1.00, D (G(z)): 0.00
+Epoch [155/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9189, D(x): 1.00, D (G(z)): 0.00
+Epoch [155/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8527, D(x): 1.00, D (G(z)): 0.00
+Epoch [155/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8185, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0155.png
+Epoch [156/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8198, D(x): 1.00, D (G(z)): 0.00
+Epoch [156/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7906, D(x): 1.00, D (G(z)): 0.00
+Epoch [156/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7666, D(x): 1.00, D (G(z)): 0.00
+Epoch [156/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9057, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0156.png
+Epoch [157/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9248, D(x): 1.00, D (G(z)): 0.00
+Epoch [157/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8265, D(x): 1.00, D (G(z)): 0.00
+Epoch [157/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7074, D(x): 1.00, D (G(z)): 0.00
+Epoch [157/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8802, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0157.png
+Epoch [158/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7914, D(x): 1.00, D (G(z)): 0.00
+Epoch [158/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9199, D(x): 1.00, D (G(z)): 0.00
+Epoch [158/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7410, D(x): 1.00, D (G(z)): 0.00
+Epoch [158/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9316, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0158.png
+Epoch [159/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8798, D(x): 1.00, D (G(z)): 0.00
+Epoch [159/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.6609, D(x): 1.00, D (G(z)): 0.00
+Epoch [159/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9139, D(x): 1.00, D (G(z)): 0.00
+Epoch [159/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8799, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0159.png
+Epoch [160/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8244, D(x): 1.00, D (G(z)): 0.00
+Epoch [160/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8936, D(x): 1.00, D (G(z)): 0.00
+Epoch [160/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9299, D(x): 1.00, D (G(z)): 0.00
+Epoch [160/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9396, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0160.png
+Epoch [161/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7540, D(x): 1.00, D (G(z)): 0.00
+Epoch [161/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7375, D(x): 1.00, D (G(z)): 0.00
+Epoch [161/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8621, D(x): 1.00, D (G(z)): 0.00
+Epoch [161/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9924, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0161.png
+Epoch [162/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8362, D(x): 1.00, D (G(z)): 0.00
+Epoch [162/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8975, D(x): 1.00, D (G(z)): 0.00
+Epoch [162/200], Step [30/45], disc_loss: 0.0000, gen_loss: 59.0052, D(x): 1.00, D (G(z)): 0.00
+Epoch [162/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9676, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0162.png
+Epoch [163/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9361, D(x): 1.00, D (G(z)): 0.00
+Epoch [163/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9718, D(x): 1.00, D (G(z)): 0.00
+Epoch [163/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8953, D(x): 1.00, D (G(z)): 0.00
+Epoch [163/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8216, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0163.png
+Epoch [164/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8242, D(x): 1.00, D (G(z)): 0.00
+Epoch [164/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7462, D(x): 1.00, D (G(z)): 0.00
+Epoch [164/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.6979, D(x): 1.00, D (G(z)): 0.00
+Epoch [164/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7087, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0164.png
+Epoch [165/200], Step [10/45], disc_loss: 0.0000, gen_loss: 59.0454, D(x): 1.00, D (G(z)): 0.00
+Epoch [165/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7807, D(x): 1.00, D (G(z)): 0.00
+Epoch [165/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8589, D(x): 1.00, D (G(z)): 0.00
+Epoch [165/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8465, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0165.png
+Epoch [166/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8556, D(x): 1.00, D (G(z)): 0.00
+Epoch [166/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8539, D(x): 1.00, D (G(z)): 0.00
+Epoch [166/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7991, D(x): 1.00, D (G(z)): 0.00
+Epoch [166/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8755, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0166.png
+Epoch [167/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9526, D(x): 1.00, D (G(z)): 0.00
+Epoch [167/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7869, D(x): 1.00, D (G(z)): 0.00
+Epoch [167/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8546, D(x): 1.00, D (G(z)): 0.00
+Epoch [167/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8644, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0167.png
+Epoch [168/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7611, D(x): 1.00, D (G(z)): 0.00
+Epoch [168/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7701, D(x): 1.00, D (G(z)): 0.00
+Epoch [168/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.6434, D(x): 1.00, D (G(z)): 0.00
+Epoch [168/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8386, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0168.png
+Epoch [169/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.6524, D(x): 1.00, D (G(z)): 0.00
+Epoch [169/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7930, D(x): 1.00, D (G(z)): 0.00
+Epoch [169/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8627, D(x): 1.00, D (G(z)): 0.00
+Epoch [169/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8612, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0169.png
+Epoch [170/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9821, D(x): 1.00, D (G(z)): 0.00
+Epoch [170/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7009, D(x): 1.00, D (G(z)): 0.00
+Epoch [170/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9634, D(x): 1.00, D (G(z)): 0.00
+Epoch [170/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7988, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0170.png
+Epoch [171/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8716, D(x): 1.00, D (G(z)): 0.00
+Epoch [171/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9282, D(x): 1.00, D (G(z)): 0.00
+Epoch [171/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8829, D(x): 1.00, D (G(z)): 0.00
+Epoch [171/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7701, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0171.png
+Epoch [172/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9466, D(x): 1.00, D (G(z)): 0.00
+Epoch [172/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8671, D(x): 1.00, D (G(z)): 0.00
+Epoch [172/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.5659, D(x): 1.00, D (G(z)): 0.00
+Epoch [172/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8982, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0172.png
+Epoch [173/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8784, D(x): 1.00, D (G(z)): 0.00
+Epoch [173/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7370, D(x): 1.00, D (G(z)): 0.00
+Epoch [173/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9308, D(x): 1.00, D (G(z)): 0.00
+Epoch [173/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8555, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0173.png
+Epoch [174/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7831, D(x): 1.00, D (G(z)): 0.00
+Epoch [174/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9290, D(x): 1.00, D (G(z)): 0.00
+Epoch [174/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9065, D(x): 1.00, D (G(z)): 0.00
+Epoch [174/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.6530, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0174.png
+Epoch [175/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7141, D(x): 1.00, D (G(z)): 0.00
+Epoch [175/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9149, D(x): 1.00, D (G(z)): 0.00
+Epoch [175/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8428, D(x): 1.00, D (G(z)): 0.00
+Epoch [175/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8753, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0175.png
+Epoch [176/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7752, D(x): 1.00, D (G(z)): 0.00
+Epoch [176/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9000, D(x): 1.00, D (G(z)): 0.00
+Epoch [176/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8405, D(x): 1.00, D (G(z)): 0.00
+Epoch [176/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8349, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0176.png
+Epoch [177/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9641, D(x): 1.00, D (G(z)): 0.00
+Epoch [177/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9222, D(x): 1.00, D (G(z)): 0.00
+Epoch [177/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8269, D(x): 1.00, D (G(z)): 0.00
+Epoch [177/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7394, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0177.png
+Epoch [178/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7928, D(x): 1.00, D (G(z)): 0.00
+Epoch [178/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8650, D(x): 1.00, D (G(z)): 0.00
+Epoch [178/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8428, D(x): 1.00, D (G(z)): 0.00
+Epoch [178/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9235, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0178.png
+Epoch [179/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9036, D(x): 1.00, D (G(z)): 0.00
+Epoch [179/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7011, D(x): 1.00, D (G(z)): 0.00
+Epoch [179/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8708, D(x): 1.00, D (G(z)): 0.00
+Epoch [179/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8627, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0179.png
+Epoch [180/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7824, D(x): 1.00, D (G(z)): 0.00
+Epoch [180/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8666, D(x): 1.00, D (G(z)): 0.00
+Epoch [180/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7557, D(x): 1.00, D (G(z)): 0.00
+Epoch [180/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7956, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0180.png
+Epoch [181/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8968, D(x): 1.00, D (G(z)): 0.00
+Epoch [181/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7583, D(x): 1.00, D (G(z)): 0.00
+Epoch [181/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9693, D(x): 1.00, D (G(z)): 0.00
+Epoch [181/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7855, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0181.png
+Epoch [182/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7534, D(x): 1.00, D (G(z)): 0.00
+Epoch [182/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.6649, D(x): 1.00, D (G(z)): 0.00
+Epoch [182/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7950, D(x): 1.00, D (G(z)): 0.00
+Epoch [182/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9058, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0182.png
+Epoch [183/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7702, D(x): 1.00, D (G(z)): 0.00
+Epoch [183/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.6116, D(x): 1.00, D (G(z)): 0.00
+Epoch [183/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8128, D(x): 1.00, D (G(z)): 0.00
+Epoch [183/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8793, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0183.png
+Epoch [184/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8428, D(x): 1.00, D (G(z)): 0.00
+Epoch [184/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8327, D(x): 1.00, D (G(z)): 0.00
+Epoch [184/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.9134, D(x): 1.00, D (G(z)): 0.00
+Epoch [184/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8733, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0184.png
+Epoch [185/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8098, D(x): 1.00, D (G(z)): 0.00
+Epoch [185/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.6424, D(x): 1.00, D (G(z)): 0.00
+Epoch [185/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7574, D(x): 1.00, D (G(z)): 0.00
+Epoch [185/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9019, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0185.png
+Epoch [186/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7017, D(x): 1.00, D (G(z)): 0.00
+Epoch [186/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7824, D(x): 1.00, D (G(z)): 0.00
+Epoch [186/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7787, D(x): 1.00, D (G(z)): 0.00
+Epoch [186/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.6591, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0186.png
+Epoch [187/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7040, D(x): 1.00, D (G(z)): 0.00
+Epoch [187/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8091, D(x): 1.00, D (G(z)): 0.00
+Epoch [187/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7575, D(x): 1.00, D (G(z)): 0.00
+Epoch [187/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7682, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0187.png
+Epoch [188/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7696, D(x): 1.00, D (G(z)): 0.00
+Epoch [188/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8720, D(x): 1.00, D (G(z)): 0.00
+Epoch [188/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7201, D(x): 1.00, D (G(z)): 0.00
+Epoch [188/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7526, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0188.png
+Epoch [189/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.6049, D(x): 1.00, D (G(z)): 0.00
+Epoch [189/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.5487, D(x): 1.00, D (G(z)): 0.00
+Epoch [189/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7778, D(x): 1.00, D (G(z)): 0.00
+Epoch [189/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8400, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0189.png
+Epoch [190/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7646, D(x): 1.00, D (G(z)): 0.00
+Epoch [190/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8652, D(x): 1.00, D (G(z)): 0.00
+Epoch [190/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8061, D(x): 1.00, D (G(z)): 0.00
+Epoch [190/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8973, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0190.png
+Epoch [191/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.6740, D(x): 1.00, D (G(z)): 0.00
+Epoch [191/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7298, D(x): 1.00, D (G(z)): 0.00
+Epoch [191/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8403, D(x): 1.00, D (G(z)): 0.00
+Epoch [191/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8545, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0191.png
+Epoch [192/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8949, D(x): 1.00, D (G(z)): 0.00
+Epoch [192/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8948, D(x): 1.00, D (G(z)): 0.00
+Epoch [192/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7066, D(x): 1.00, D (G(z)): 0.00
+Epoch [192/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.6600, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0192.png
+Epoch [193/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7059, D(x): 1.00, D (G(z)): 0.00
+Epoch [193/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7310, D(x): 1.00, D (G(z)): 0.00
+Epoch [193/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8341, D(x): 1.00, D (G(z)): 0.00
+Epoch [193/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7415, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0193.png
+Epoch [194/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7884, D(x): 1.00, D (G(z)): 0.00
+Epoch [194/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.8539, D(x): 1.00, D (G(z)): 0.00
+Epoch [194/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7797, D(x): 1.00, D (G(z)): 0.00
+Epoch [194/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8838, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0194.png
+Epoch [195/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.8036, D(x): 1.00, D (G(z)): 0.00
+Epoch [195/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.9423, D(x): 1.00, D (G(z)): 0.00
+Epoch [195/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8503, D(x): 1.00, D (G(z)): 0.00
+Epoch [195/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7610, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0195.png
+Epoch [196/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7321, D(x): 1.00, D (G(z)): 0.00
+Epoch [196/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.6777, D(x): 1.00, D (G(z)): 0.00
+Epoch [196/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7451, D(x): 1.00, D (G(z)): 0.00
+Epoch [196/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.9282, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0196.png
+Epoch [197/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9433, D(x): 1.00, D (G(z)): 0.00
+Epoch [197/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7604, D(x): 1.00, D (G(z)): 0.00
+Epoch [197/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8392, D(x): 1.00, D (G(z)): 0.00
+Epoch [197/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7510, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0197.png
+Epoch [198/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.9490, D(x): 1.00, D (G(z)): 0.00
+Epoch [198/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7125, D(x): 1.00, D (G(z)): 0.00
+Epoch [198/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.7455, D(x): 1.00, D (G(z)): 0.00
+Epoch [198/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.6534, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0198.png
+Epoch [199/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7391, D(x): 1.00, D (G(z)): 0.00
+Epoch [199/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.7798, D(x): 1.00, D (G(z)): 0.00
+Epoch [199/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.6783, D(x): 1.00, D (G(z)): 0.00
+Epoch [199/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.8260, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0199.png
+Epoch [200/200], Step [10/45], disc_loss: 0.0000, gen_loss: 58.7178, D(x): 1.00, D (G(z)): 0.00
+Epoch [200/200], Step [20/45], disc_loss: 0.0000, gen_loss: 58.6218, D(x): 1.00, D (G(z)): 0.00
+Epoch [200/200], Step [30/45], disc_loss: 0.0000, gen_loss: 58.8400, D(x): 1.00, D (G(z)): 0.00
+Epoch [200/200], Step [40/45], disc_loss: 0.0000, gen_loss: 58.7360, D(x): 1.00, D (G(z)): 0.00
+Saving fake_images-0200.png
