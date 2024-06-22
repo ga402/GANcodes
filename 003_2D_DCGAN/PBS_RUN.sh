@@ -19,23 +19,23 @@
 
 export PATH=~/miniconda/envs/yoloV5_model/bin/:$PATH
 source activate yoloV5_model
-PBS_O_WORKDIR=/rds/general/user/ga402/home/009_GAN/001_2D_DBGAN
+PBS_O_WORKDIR=/rds/general/user/ga402/home/009_GAN/003_2D_DCGAN
 
 
 ### THIS IS WHAT YOU NEED TO CHANGE
 # 1. Accessory infomation
-INFO="DBGAN2d; Wasserstein GAN attempt"
+INFO="DCGAN2d; Conditional GAN attempt"
 
 # 2. The project directory name
 PROJECT_DIR=/rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC
 
 # project
-PROJECT_NAME="${PROJECT_DIR}/DBGAN2d"
+PROJECT_NAME="${PROJECT_DIR}/DCGAN2d"
 
 # location of the data
 # dataroot="${PROJECT_DIR}/IndividualJPG"
 image_data=/rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/IMAGES2D
-
+label_data='/rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/images128Filtered.csv'
 
 # Number of workers for dataloader
 workers=2
@@ -44,7 +44,7 @@ workers=2
 batch_size=128
 
 # Spatial size of training images. All images will be resized to this
-image_size=128
+image_size=64
 
 # Number of channels in the training images. For color images this is 3
 nc=3
@@ -53,13 +53,13 @@ nc=3
 nz=100
 
 # Size of feature maps in generator
-ngf=64
+#ngf=64
 
 # Size of feature maps in discriminator
-ndf=64
+#ndf=64
 
 # Number of training epochs
-num_epochs=20
+num_epochs=200
 
 # Learning rate for optimizers
 # lr=0.0002
@@ -95,15 +95,13 @@ set -o errtrace
 
 # Actual commands of interest to run:
 export CUBLAS_WORKSPACE_CONFIG=:16:8 #set env variable in terminal
-python ${PBS_O_WORKDIR}/dbgan2d.py --project $PROJECT_NAME \
-       --dataroot $dataroot \
+python ${PBS_O_WORKDIR}/main.py --project $PROJECT_NAME \
+       --dataroot $image_data \
+       --label_data $label_data \
        --workers $workers \
        --batch_size $batch_size \
        --image_size $image_size \
        --nc $nc --nz $nz \
-       --ngf $ngf --ndf $ndf \
        --num_epochs $num_epochs \
        --lr $lr --beta1 $beta1 --ngpu $ngpu \
        --accessory_info "$INFO"
-
- 

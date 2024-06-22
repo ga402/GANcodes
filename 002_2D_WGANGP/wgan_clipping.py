@@ -39,12 +39,12 @@ class Generator(torch.nn.Module):
 	self.output = nn.Tanh()	
 
 	def _block(self, in_channels, out_channels, kernel_size, stride, padding):
-		return nn.Sequential(
-			nn.ConvTranspose2d(
-				in_channels, out_channels, kernel_size, stride, padding, bias=False),
-			nn.BatchNorm2d(out_channels),
-			nn.ReLU(),
-		)
+    	return nn.Sequential(
+    		nn.ConvTranspose2d(
+    			in_channels, out_channels, kernel_size, stride, padding, bias=False),
+    		nn.BatchNorm2d(out_channels),
+    		nn.ReLU(),
+    	)
 
 
 
