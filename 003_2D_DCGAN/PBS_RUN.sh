@@ -34,8 +34,8 @@ PROJECT_NAME="${PROJECT_DIR}/DCGAN2d"
 
 # location of the data
 # dataroot="${PROJECT_DIR}/IndividualJPG"
-image_data=/rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/IMAGES2D
-label_data='/rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/images128Filtered.csv'
+image_data=/rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/Images128x128Filtered
+label_data=/rds/general/user/ga402/home/PROJECTS/001_AMLCD8TC/images128Filtered.csv
 
 # Number of workers for dataloader
 workers=2
@@ -59,7 +59,7 @@ nz=100
 #ndf=64
 
 # Number of training epochs
-num_epochs=200
+num_epochs=10
 
 # Learning rate for optimizers
 # lr=0.0002
